@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Stewardship Hub | Grace Community Church</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .bg-grace-orange { background-color: #f97316; }
+        .text-grace-orange { color: #f97316; }
+        .border-grace-orange { border-color: #f97316; }
+        
+        /* Modal styling */
+        .modal { display: none; }
+        .modal.active { display: flex; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="church" class="text-grace-orange h-8 w-8"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Grace Community</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-600 hover:text-grace-orange font-medium">Main Hub</a>
+                    <a href="#workshops" class="text-gray-600 hover:text-grace-orange font-medium">Tech Workshops</a>
+                    <a href="#resources" class="text-gray-600 hover:text-grace-orange font-medium">Tech Covenant</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-gray-900 text-white py-16 sm:py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center justify-center p-3 bg-gray-800 rounded-full mb-6 border border-gray-700">
+                <i data-lucide="smartphone" class="text-grace-orange h-6 w-6 mr-2"></i>
+                <span class="text-sm font-semibold tracking-wider uppercase text-gray-300">Digital Stewardship</span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-4 tracking-tight">Tech & Screens Parenting Hub</h1>
+            <p class="text-xl sm:text-2xl font-light max-w-2xl mx-auto opacity-90 text-gray-300">
+                Helping your family build healthy digital habits, protect hearts, and focus on real connection.
+            </p>
+        </div>
+        <!-- Decorative background elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+            <svg class="absolute right-0 top-0 h-full w-1/2 transform translate-x-1/3 -translate-y-1/4 text-white" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <polygon points="50,0 100,0 50,100 0,100"></polygon>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+        
+        <!-- Workshops Section -->
+        <section id="workshops" class="mb-16">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Phase-Specific Tech Guides</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Because a 6-year-old and a 16-year-old need different rules. Download the lesson plans for guiding your child's screen time at every stage.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Phase 1: Artist (0-5) -->
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col transition-transform hover:-translate-y-1">
+                    <div class="bg-red-50 p-4 border-b border-red-100 flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider text-red-600">Birth - Age 5</span>
+                        <i data-lucide="tv" class="text-red-400 h-5 w-5"></i>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Screen-Free Foundations</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-4">The Artist Phase</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Protect their developing brains by keeping the early years focused on real-world touch, play, and presence.</p>
+                        <button onclick="openModal('modal-artist-tech')" class="w-full bg-gray-50 hover:bg-red-50 text-red-600 font-semibold py-2 px-4 border border-red-200 rounded-lg flex items-center justify-center transition-colors">
+                            <i data-lucide="file-text" class="h-4 w-4 mr-2"></i> View Guide
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phase 2: Scientist (6-10) -->
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col transition-transform hover:-translate-y-1">
+                    <div class="bg-yellow-50 p-4 border-b border-yellow-100 flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider text-yellow-600">Ages 6 - 10</span>
+                        <i data-lucide="gamepad-2" class="text-yellow-500 h-5 w-5"></i>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Guarding the Heart</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-4">The Scientist Phase</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Understand how games and apps hook their brains, and learn how to set strong walls around their digital play.</p>
+                        <button onclick="openModal('modal-scientist-tech')" class="w-full bg-gray-50 hover:bg-yellow-50 text-yellow-600 font-semibold py-2 px-4 border border-yellow-200 rounded-lg flex items-center justify-center transition-colors">
+                            <i data-lucide="file-text" class="h-4 w-4 mr-2"></i> View Guide
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Engineer (11-13) -->
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col transition-transform hover:-translate-y-1">
+                    <div class="bg-blue-50 p-4 border-b border-blue-100 flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Ages 11 - 13</span>
+                        <i data-lucide="users" class="text-blue-400 h-5 w-5"></i>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Digital Identity</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-4">The Engineer Phase</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Help middle schoolers navigate social media, avoid the comparison trap, and find their worth in God, not "likes."</p>
+                        <button onclick="openModal('modal-engineer-tech')" class="w-full bg-gray-50 hover:bg-blue-50 text-blue-600 font-semibold py-2 px-4 border border-blue-200 rounded-lg flex items-center justify-center transition-colors">
+                            <i data-lucide="file-text" class="h-4 w-4 mr-2"></i> View Guide
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Philosopher (14-18) -->
+                <div class="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden flex flex-col transition-transform hover:-translate-y-1">
+                    <div class="bg-gray-100 p-4 border-b border-gray-200 flex justify-between items-center">
+                        <span class="text-xs font-bold uppercase tracking-wider text-gray-700">Ages 14 - 18</span>
+                        <i data-lucide="shield-check" class="text-gray-500 h-5 w-5"></i>
+                    </div>
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2">Digital Discernment</h3>
+                        <p class="text-sm font-semibold text-gray-500 mb-4">The Philosopher Phase</p>
+                        <p class="text-gray-600 text-sm mb-6 flex-grow">Shift from policing to mentoring. Teach older teens how to filter content and use technology with wisdom and purpose.</p>
+                        <button onclick="openModal('modal-philosopher-tech')" class="w-full bg-gray-50 hover:bg-gray-200 text-gray-700 font-semibold py-2 px-4 border border-gray-300 rounded-lg flex items-center justify-center transition-colors">
+                            <i data-lucide="file-text" class="h-4 w-4 mr-2"></i> View Guide
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Tech Covenant Section -->
+        <section id="resources" class="bg-white rounded-2xl shadow-sm border border-grace-orange p-8 md:p-12 mt-12 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0 md:mr-8 md:w-2/3">
+                <div class="inline-flex items-center justify-center p-3 bg-orange-100 rounded-xl mb-4">
+                    <i data-lucide="file-signature" class="text-grace-orange h-8 w-8"></i>
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Family Tech Covenant</h2>
+                <p class="text-gray-600 text-lg mb-4">
+                    Before handing over a device, sit down and set the ground rules. This printable agreement helps families protect rest, prioritize people, and build honesty around screens.
+                </p>
+                <p class="text-sm font-semibold text-gray-500 uppercase tracking-wider">Based on 1 Corinthians 6:12</p>
+            </div>
+            <div class="w-full md:w-auto">
+                <button onclick="openModal('modal-covenant')" class="w-full md:w-auto bg-grace-orange hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-colors flex items-center justify-center text-lg">
+                    <i data-lucide="download" class="mr-2 h-6 w-6"></i>
+                    View & Print Covenant
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center items-center mb-4">
+                <i data-lucide="church" class="h-6 w-6 text-gray-500 mr-2"></i>
+                <span class="text-xl font-bold text-white">Grace Community Church</span>
+            </div>
+            <p class="mb-4">Detroit, Michigan</p>
+            <p class="text-sm text-gray-500">Equipping families to guide the next generation in a digital world.</p>
+        </div>
+    </footer>
+
+    <!-- MODALS SECTION -->
+
+    <!-- Phase 1 Tech Modal (0-5) -->
+    <div id="modal-artist-tech" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 class="text-2xl font-bold text-red-600">Screen-Free Foundations (Ages 0-5)</h2>
+                <button onclick="closeModal('modal-artist-tech')" class="text-gray-400 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6 text-gray-700 print-content" id="print-artist-tech">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Theme: Protecting the Senses</h3>
+                    <p><strong>Key Focus:</strong> Young children learn about God's world by touching, tasting, and physically moving through it. Screens skip this vital step.</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">The Challenge of Early Tech</h3>
+                    <p>At this stage, children are "Artists." Their brains are not ready to process the fast-paced, flashing lights of tablets and TVs. When we use screens to constantly quiet them, they miss learning how to self-soothe or handle boredom.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Action Steps for Parents</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><strong>Turn off background TV:</strong> It disrupts their focus while playing.</li>
+                        <li><strong>Be the "Keeper":</strong> Keep the phone away during meals and bedtimes. When you meet their needs physically (not digitally), you teach them that God provides.</li>
+                        <li><strong>Swap Swiping for Sorting:</strong> Give them real-world tasks like stacking blocks or playing with water instead of tapping a screen.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-red-50 p-4 rounded-lg border border-red-100">
+                    <h3 class="text-lg font-bold text-red-800 mb-2">Take-Home Idea: The Phone Basket</h3>
+                    <p class="text-sm">When you get home from work, put your phone in a basket by the door for the first 30 minutes. Let your child see your face before they see the back of your phone.</p>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-4 rounded-b-2xl">
+                <button onclick="closeModal('modal-artist-tech')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg">Close</button>
+                <button onclick="printDiv('print-artist-tech', 'Screen-Free Foundations')" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 flex items-center">
+                    <i data-lucide="printer" class="h-4 w-4 mr-2"></i> Print Guide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phase 2 Tech Modal (6-10) -->
+    <div id="modal-scientist-tech" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 class="text-2xl font-bold text-yellow-600">The Scientist & The Smartphone (Ages 6-10)</h2>
+                <button onclick="closeModal('modal-scientist-tech')" class="text-gray-400 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6 text-gray-700 print-content" id="print-scientist-tech">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Theme: Engaging Interests while Guarding the Heart</h3>
+                    <p><strong>Key Verse:</strong> "All things are lawful for me, but I will not be dominated by anything." (1 Corinthians 6:12)</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">The Science of the "Scroll"</h3>
+                    <p>Elementary kids love collecting facts and discovering how things work. Apps and games are designed to give their brains a constant loop of rewards. If a child throws a fit when the iPad is taken away, they aren't just being bad—their brain has been hijacked. Proverbs 25:28 says a person without self-control is like a city with broken walls. We have to build the walls for them.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Identifying the Symptoms</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Irritability when away from a screen.</li>
+                        <li>Losing interest in physical hobbies (sports, Legos, drawing).</li>
+                        <li>If the device "dominates" their mood, it is becoming an idol.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                    <h3 class="text-lg font-bold text-yellow-800 mb-2">The 3-to-1 Rule</h3>
+                    <p class="text-sm">For every hour of "Screen Discovery" (like playing Minecraft or watching YouTube), require three hours of "Real World Discovery" (playing outside, reading a physical book, family game night).</p>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-4 rounded-b-2xl">
+                <button onclick="closeModal('modal-scientist-tech')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg">Close</button>
+                <button onclick="printDiv('print-scientist-tech', 'The Scientist Tech Guide')" class="px-4 py-2 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 flex items-center">
+                    <i data-lucide="printer" class="h-4 w-4 mr-2"></i> Print Guide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phase 3 Tech Modal (11-13) -->
+    <div id="modal-engineer-tech" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 class="text-2xl font-bold text-blue-600">The Engineer & Digital Identity (Ages 11-13)</h2>
+                <button onclick="closeModal('modal-engineer-tech')" class="text-gray-400 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6 text-gray-700 print-content" id="print-engineer-tech">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Theme: Affirming Identity in a Digital World</h3>
+                    <p><strong>Key Verse:</strong> "Am I now seeking the approval of man, or of God?... If I were still trying to please man, I would not be a servant of Christ." (Galatians 1:10)</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">The Engineered Self</h3>
+                    <p>Middle schoolers are trying to figure out who they are. Social media gives them tools to "engineer" a fake, perfect version of themselves. When they stare at perfectly filtered photos of others, they start to hate their own real, "fearfully and wonderfully made" bodies.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">From "Police" to "Partner"</h3>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>If you only "police" their phone by snooping in secret, kids will just learn to hide things better.</li>
+                        <li>If you "partner" with them, you talk openly about the hard things online.</li>
+                        <li>Create a no-shame zone: Let them know they can come to you if they see something bad online without fear of losing their phone instantly.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                    <h3 class="text-lg font-bold text-blue-800 mb-2">Take-Home Action: The Non-Digital Night</h3>
+                    <p class="text-sm">Commit to one night a week where all phones are put away. Use this face-to-face time to tell them: <em>"I love you for who you are, not for what you post. You don't have to be perfect to be loved in this house."</em></p>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-4 rounded-b-2xl">
+                <button onclick="closeModal('modal-engineer-tech')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg">Close</button>
+                <button onclick="printDiv('print-engineer-tech', 'The Engineer Tech Guide')" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center">
+                    <i data-lucide="printer" class="h-4 w-4 mr-2"></i> Print Guide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Phase 4 Tech Modal (14-18) -->
+    <div id="modal-philosopher-tech" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 class="text-2xl font-bold text-gray-800">The Philosopher & Digital Discernment (Ages 14-18)</h2>
+                <button onclick="closeModal('modal-philosopher-tech')" class="text-gray-400 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-6 text-gray-700 print-content" id="print-philosopher-tech">
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">Theme: Mobilizing Wisdom in a Digital World</h3>
+                    <p><strong>Key Verse:</strong> "Look carefully then how you walk, not as unwise but as wise, making the best use of the time." (Ephesians 5:15-16)</p>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">The Digital Public Square</h3>
+                    <p>For high schoolers, the internet is where they encounter every different belief and worldview. We do not want them to simply hide from the world; we want them to learn how to walk wisely within it. This is the stage where you must shift from a "Manager" who makes the rules to a "Consultant" who helps them set their own boundaries.</p>
+                </div>
+
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 border-b pb-2 mb-3">The Consultant Question Bank</h3>
+                    <p class="mb-2">When they are struggling with screen time, ask these questions instead of yelling:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>"Does this app make it easier or harder for you to love God and focus?"</li>
+                        <li>"How does your current phone use match up with the kind of adult you want to be?"</li>
+                        <li>"How can I help you take back the time that the algorithm is stealing?"</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-100 p-4 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">Take-Home Challenge: Digital Missionaries</h3>
+                    <p class="text-sm">Instead of asking what they need to <em>stop</em> doing online, ask what they could <em>start</em> doing. Challenge them to use their social media or gaming accounts to show kindness, encourage others, and be a light for Christ.</p>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-4 rounded-b-2xl">
+                <button onclick="closeModal('modal-philosopher-tech')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg">Close</button>
+                <button onclick="printDiv('print-philosopher-tech', 'The Philosopher Tech Guide')" class="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 flex items-center">
+                    <i data-lucide="printer" class="h-4 w-4 mr-2"></i> Print Guide
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tech Covenant Modal -->
+    <div id="modal-covenant" class="modal fixed inset-0 bg-black bg-opacity-60 z-50 items-center justify-center p-4">
+        <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[90vh] overflow-y-auto shadow-2xl flex flex-col">
+            <div class="p-6 border-b border-gray-200 flex justify-between items-center sticky top-0 bg-white">
+                <h2 class="text-2xl font-bold text-grace-orange flex items-center">
+                    <i data-lucide="smartphone" class="mr-2"></i> Family Tech Covenant
+                </h2>
+                <button onclick="closeModal('modal-covenant')" class="text-gray-400 hover:text-gray-700">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+            <div class="p-8 space-y-6 text-gray-800 print-content" id="print-covenant">
+                
+                <div class="text-center mb-8 border-b pb-6">
+                    <h1 class="text-3xl font-extrabold mb-2 uppercase tracking-wide">Family Tech Covenant</h1>
+                    <p class="text-lg italic text-gray-600">"All things are lawful for me, but I will not be dominated by anything." - 1 Corinthians 6:12</p>
+                </div>
+
+                <p class="mb-6">We believe that technology is a tool given to us to create, connect, and learn. However, we also know it can be a distraction from what matters most: loving God and loving each other. We agree to the following commitments:</p>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-bold border-b border-orange-200 pb-1 mb-2">1. We will protect our time and rest.</h3>
+                        <p class="mb-2">We agree that sleep is a gift from God. Therefore, all personal screens will be turned off and plugged into the family charging station by: <span class="border-b border-black inline-block w-24"></span> PM.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold border-b border-orange-200 pb-1 mb-2">2. We will prioritize people over screens.</h3>
+                        <p class="mb-2">When we are eating meals together, riding in the car as a family, or someone is talking directly to us, we will put our devices down and give our full attention.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold border-b border-orange-200 pb-1 mb-2">3. We will act with honesty and integrity.</h3>
+                        <p class="mb-2">We will not hide apps, use secret accounts, or delete browser history. Parents promise to review devices as mentors who want to help, not just as police looking for a crime.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold border-b border-orange-200 pb-1 mb-2">4. We will ask for help when we mess up.</h3>
+                        <p class="mb-2">If we see something online that makes us uncomfortable, scared, or tempted, we promise to tell a parent or trusted adult immediately. <strong>Parents promise to stay calm and help, without immediately threatening to take the device away forever.</strong></p>
+                    </div>
+                </div>
+
+                <div class="mt-12 pt-8 border-t-2 border-gray-200 flex justify-between gap-8">
+                    <div class="w-1/2">
+                        <div class="border-b border-black mb-2 h-8"></div>
+                        <p class="text-sm font-bold text-gray-600">Child Signature</p>
+                    </div>
+                    <div class="w-1/2">
+                        <div class="border-b border-black mb-2 h-8"></div>
+                        <p class="text-sm font-bold text-gray-600">Parent Signature</p>
+                    </div>
+                </div>
+                <div class="mt-6 text-right">
+                    <p class="text-sm text-gray-500">Date: <span class="border-b border-gray-400 inline-block w-32"></span></p>
+                </div>
+            </div>
+            <div class="p-4 border-t border-gray-200 bg-gray-50 flex justify-end gap-4 rounded-b-2xl">
+                <button onclick="closeModal('modal-covenant')" class="px-4 py-2 text-gray-600 hover:bg-gray-200 rounded-lg">Close</button>
+                <button onclick="printDiv('print-covenant', 'Family Tech Covenant')" class="px-4 py-2 bg-grace-orange text-white rounded-lg hover:bg-orange-600 flex items-center font-bold">
+                    <i data-lucide="printer" class="h-4 w-4 mr-2"></i> Print Document
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Modal Logic
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Print functionality
+        function printDiv(divId, title) {
+            var printContents = document.getElementById(divId).innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            // Create a temporary print view
+            document.body.innerHTML = `
+                <div style="font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px;">
+                    <div style="margin-bottom: 20px; color: #666; font-size: 12px; text-transform: uppercase;">
+                        Grace Community Church - Digital Stewardship Hub
+                    </div>
+                    ${printContents}
+                </div>
+            `;
+            
+            window.print();
+            
+            // Restore original page
+            document.body.innerHTML = originalContents;
+            // Re-initialize icons after restoring HTML
+            lucide.createIcons();
+        }
+    </script>
+</body>
+</html>
